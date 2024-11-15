@@ -144,6 +144,3 @@ def productos():
 def producto_detalle(id):
     producto = db.collection('productos').document(id).get().to_dict()
     return render_template('detalle.html', producto=producto)
-
-if __name__ == '__main__':
-    app.run(debug=True)
