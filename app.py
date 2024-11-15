@@ -1,9 +1,14 @@
+import os
+import json
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-cred = credentials.Certificate("secret_fire.json")
-firebase_admin.initialize_app(cred)
+firebase_config = os.getenv("FIREBASE_CONFIG")
+if firebase_config:
+    cred = credentials.Certificate(json.loads(firebase_config))
+    firebase_admin.initialize_app(cred)
+
 db = firestore.client()
 
 app = Flask(__name__)
