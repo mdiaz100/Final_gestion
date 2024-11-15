@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="product-container">
+        <h1>{{ producto.nombre }}</h1>
+
+        <!-- Contenedor para imagen y detalles en columnas -->
+        <div class="product-content">
+            <div class="product-image">
+                <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}">
+            </div>
+
+            <div class="product-details">
+                <p><span>Precio:</span> <span class="product-price">${{ producto.precio }}</span></p>
+                <p><span>Descripción:</span> {{ producto.descripcion }}</p>
+                <p><span>Categoría:</span> {{ producto.categoria }}</p>
+                <p><span>Cantidad en stock:</span> {{ producto.cantidad }}</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

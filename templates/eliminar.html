@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Eliminación</title>
+    <style>
+        /* General */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Contenedor de confirmación */
+        .confirmation-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        /* Botones */
+        .confirmation-container button, .confirmation-container a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .confirmation-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+
+        .confirmation-container button:hover {
+            background-color: #45a049;
+        }
+
+        .confirmation-container a {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        .confirmation-container a:hover {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <h1>¿Estás seguro de que deseas eliminar este producto?</h1>
+        <p>Producto: <strong>{{ producto.nombre }}</strong></p>
+        <p>Precio: ${{ producto.precio }}</p>
+        <form action="{{ url_for('admin_eliminar_producto', id=id) }}" method="post">
+            <button type="submit">Confirmar Eliminación</button>
+        </form>
+        <a href="{{ url_for('admin_productos') }}">Cancelar</a>
+    </div>
+</body>
+</html>

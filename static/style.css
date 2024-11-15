@@ -1,0 +1,176 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    padding-top: 100px; /* Espacio para la barra superior */
+}
+
+/* Encabezado */
+h1 {
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0;
+    color: #4CAF50;
+}
+
+/* Barra de filtros */
+form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Estilos del botón de login */
+.login-btn {
+    margin-left: auto;
+    background-color: white;
+    color: #4CAF50;
+    padding: 8px 80px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #45a049;
+    color: white;
+}
+
+form label {
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+form input, form select, form button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+form input, form select {
+    background: #fff;
+    color: #333;
+}
+
+form button {
+    background-color: #fff;
+    color: #4CAF50;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #45a049;
+    color: white;
+}
+
+/* Lista de productos */
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+ul li {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul li a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #388E3C;
+}
+
+/* Contenedor principal */
+.product-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Título */
+.product-container h1 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de contenido */
+.product-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Imagen del producto */
+.product-image {
+    flex: 1;
+    max-width: 250px;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Detalles del producto */
+.product-details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-details p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.product-details span {
+    font-weight: bold;
+}
+
+.product-price {
+    color: #4CAF50;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+

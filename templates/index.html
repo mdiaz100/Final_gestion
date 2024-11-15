@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Barra de búsqueda y botón de login -->
+    <form method="GET" action="{{ url_for('productos') }}">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" value="{{ filtros['nombre'] }}" placeholder="Nombre del producto">
+
+        <label for="categoria">Categoría:</label>
+        <select name="categoria" id="categoria">
+            <option value="">Todas</option>
+            {% for cat in categorias %}
+                <option value="{{ cat }}" {% if filtros['categoria'] == cat %}selected{% endif %}>{{ cat }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="precio_min">Mín:</label>
+        <input type="number" name="precio_min" id="precio_min" step="0.01" value="{{ filtros['precio_min'] }}">
+
+        <label for="precio_max">Máx:</label>
+        <input type="number" name="precio_max" id="precio_max" step="0.01" value="{{ filtros['precio_max'] }}">
+
+        <button type="submit">Buscar</button>
+
+        <!-- Botón de login -->
+        <a href="{{ url_for('admin_login') }}" class="login-btn">Login</a>
+    </form>
+
+    <!-- Título -->
+    <h1>Productos</h1>
+
+    <!-- Lista de productos -->
+    <ul>
+        {% for producto in productos %}
+            <li>
+                <a href="{{ url_for('producto_detalle', id=producto.id) }}">{{ producto.nombre }}</a> - ${{ producto.precio }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+
+
